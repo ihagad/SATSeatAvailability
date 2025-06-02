@@ -26,11 +26,11 @@ const showElement = (elem) => {
 }
 
 const disableElement = (elem) => {
-    elem.style.display = false
+    elem.disabled = true;
 }
 
 const enableElement = (elem) => {
-    elem.style.display = true
+    elem.disabled = false;
 }
 
 const handleOnStartState = () => {
