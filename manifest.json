@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "SAT Exam Seat Availability",
+    "description": "Check seat availability for SAT exams in the US.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup/popup.html"
+    },
+    "icons": {
+        "128": "images/icon-128.png"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "permissions": [
+        "storage",
+        "scripting",
+        "alarms",
+        "notifications"
+    ],
+    "host_permissions": [
+    "https://satsuite.collegeboard.org/sat/test-center-search"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://satsuite.collegeboard.org/sat/test-center-search"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ]
+}

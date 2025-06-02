@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Seat Availability Checker</title>
+    <link rel = "stylesheet" href = "bulma.min.css"/>
+</head>
+<body>
+
+    <div class="container m-3">
+        <h1 class="title">SAT Seat Availability Checker</h1>
+
+        <div class="field">
+            <label class = "label">Status</label>
+            <span id = "runningSpan" class="tag is-success">Running</span>
+            <span id = "stopSpan" class="tag is-danger">Stopped</span>
+        </div>
+    </div>
+
+    <div class="container m-3">
+
+        <div class="field">
+            <label class="label">Test Date</label>
+            <div class="select">
+                <select id = "testDate">
+                    <option>Loading...</option>
+                </select>
+            </div>
+
+            <p id = "testDateError" class = "help is-danger" style = "display: none;">Please select a valid test date.</p>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="field" style = "width:44%">
+                <label class="label">Zipcode</label>
+                <div class="control">
+                    <input class = "input" type="text" placeholder = "94536" id = "zipcode"/>
+                </div>
+
+                <p id = "zipcodeError" class = "help is-danger" style = "display: none;">Please enter a valid zipcode.</p>
+            </div>
+
+            <div class="field" style = "width:44%">
+                <label class="label">Radius</label>
+                <div class="select">
+                    <select id = "radius">
+                        <option value = '10'>10 miles</option>
+                        <option value = '25'>25 miles</option>
+                        <option value = '50'>50 miles</option>
+                        <option value = '100'>100 miles</option>
+                    </select>
+                </div>
+
+                <p id = "radiusError" class = "help is-danger" style = "display: none;">Please enter a valid radius.</p>
+            </div>    
+        </div>
+
+    </div>
+
+    <div class = "field is-grouped">
+        <div class="container m-3">
+            <button class="button is-success" id = "startButton">Save and Start</button>
+        </div>
+
+        <div class="container m-3">
+            <button class="button is-danger" id = "stopButton">Stop</button>
+        </div>
+    </div>
+
+</body>
+
+<script src="popup.js"></script>
+
+</html>
